@@ -1,14 +1,18 @@
 // Header.js
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import only Link for navigation
-import './style.css';
-import logo from './img/logo1.png'; // Adjusted import
+// import '../src/style.css';
+import './Header.css';
+// import logo from '../img/logo1.png'; // Adjusted import
+import logo from '../src/img/logo1.png';
 
 function Header() {
 	return (
 		<header>
 			<figure className='logo'>
-				<img src={logo} alt='Logo' />
+				<Link to='/'>
+					<img src={logo} alt='Logo' />
+				</Link>
 			</figure>
 			<nav>
 				<ul>

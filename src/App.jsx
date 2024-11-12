@@ -1,8 +1,8 @@
 // App.js
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Header from './Header';
-import Carousel from './Carousel';
+import Header from '../components/Header';
+import Carousel from '../components/Carousel';
 import Contact from './pages/Contact';
 import './style.css';
 import Home from './pages/Home';

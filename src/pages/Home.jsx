@@ -1,11 +1,13 @@
-import Carousel from '../Carousel';
-import Header from '../Header';
+import Carousel from '../../components/Carousel';
+import Header from '../../components/Header';
+import About from '../../section/About';
 
 function Home() {
 	return (
 		<div>
 			<Header />
 			<Carousel />
+			<About />
 		</div>
 	);
 }

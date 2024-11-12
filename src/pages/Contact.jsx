@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './css/contact.css';
-import Header from '../Header';
+import Header from '../../components/Header';
 
 const Contact = () => {
 	const [formData, setFormData] = useState({
