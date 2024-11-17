@@ -1,124 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-:root {
-	--padding: 20px;
-	--max-width: 1200px;
-}
-
-body {
-	font-family: 'Poppins', sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #ffffff;
-	color: #333;
-}
-
 .about-container {
-	max-width: var(--max-width);
-	margin: -15px auto 0;
-	padding: var(--padding);
-}
-
-.about-header {
+	padding: 40px;
+	max-width: 1200px;
+	margin: 0 auto;
 	text-align: center;
-	margin-bottom: 40px;
+	overflow: hidden;
 }
 
-.about-header h1 {
-	font-size: 2.5rem;
-	font-weight: 600;
-	color: #333;
-}
-
-.about-header p {
-	font-size: 1rem;
+.about-header h4 {
+	font-size: 1.2rem;
 	color: #666;
 }
 
-.about-content {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	gap: 20px;
+.about-header h1 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
-.about-card {
-	background: #fff;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	border-radius: 8px;
-	padding: 20px;
-	width: 32%; /* Adjust width for 3 cards to fit better */
-	box-sizing: border-box;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-card:hover {
-	transform: translateY(-10px);
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.about-card h2 {
-	font-size: 1.8rem;
-	font-weight: 500;
-	color: #333;
-	margin-bottom: 15px;
-}
-
-.about-card p {
+.about-content p {
 	font-size: 1rem;
 	line-height: 1.6;
-	color: #444;
+	color: #333;
+	margin-bottom: 20px;
+	text-align: justify;
 }
 
-/* Centering the iframe */
-.about-animation {
-	width: 100%; /* Full width */
+.learn-more {
+	margin: 40px auto;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	margin-top: 20px;
 }
 
-.about-animation iframe {
-	width: 80%; /* Adjust width to fit */
-	max-width: 800px; /* Optional max width */
-	height: 400px;
-	border: none;
+.learn-more-button {
+	background-color: #007bff;
+	color: #fff;
+	padding: 12px 24px;
+	text-decoration: none;
+	border-radius: 25px; /* Rounded corners */
+	font-size: 1rem;
+	transition: background-color 0.3s, box-shadow 0.3s;
+	position: relative;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1024px) {
-	.about-content {
-		justify-content: center;
-	}
-	.about-card {
-		width: 45%;
-	}
-	.about-animation {
-		width: 100%; /* Make the iframe container full-width */
-	}
+.learn-more-button:hover {
+	background-color: #0056b3;
+	box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3), 0 0 0 8px rgba(0, 123, 255, 0.2);
+}
+.about-container {
+	padding: 40px;
+	max-width: 900px;
+	margin: 0 auto;
+	text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-	.about-content {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.about-card {
-		width: 100%;
-	}
-	.about-animation {
-		width: 100%;
-	}
+.about-header h4 {
+	font-size: 1.2rem;
+	color: #666;
 }
 
-@media screen and (max-width: 480px) {
+.about-header h1 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.about-content p {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: #333;
+	margin-bottom: 20px;
+	text-align: justify;
+}
+
+.learn-more {
+	margin: 40px auto;
+	display: flex;
+	justify-content: center;
+}
+
+.learn-more-button {
+	background-color: #007bff;
+	color: #fff;
+	padding: 12px 24px;
+	text-decoration: none;
+	border-radius: 25px; /* Rounded corners */
+	font-size: 1rem;
+	transition: background-color 0.3s, box-shadow 0.3s;
+	position: relative;
+}
+
+.learn-more-button:hover {
+	background-color: #0056b3;
+	box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3), 0 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+	.about-container {
+		padding: 20px;
+	}
+
 	.about-header h1 {
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 
-	.about-header p {
+	.about-header h4 {
+		font-size: 1rem;
+	}
+
+	.about-content p {
+		font-size: 0.95rem;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: 480px) {
+	.about-container {
+		padding: 15px;
+	}
+
+	.about-header h1 {
+		font-size: 1.3rem;
+	}
+
+	.about-header h4 {
+		font-size: 0.9rem;
+	}
+
+	.about-content p {
+		font-size: 0.9rem;
+		line-height: 1.4;
+	}
+
+	.learn-more-button {
+		padding: 10px 20px;
 		font-size: 0.9rem;
 	}
 }

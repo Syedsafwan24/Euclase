@@ -1,0 +1,105 @@
+/* Global Styles */
+body {
+	font-family: poppins;
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	overflow: auto;
+}
+
+::-webkit-scrollbar {
+	display: none; /* Hide the scrollbar in webkit browsers */
+}
+
+/* Section Styling */
+.products-section {
+	padding: 40px 20px;
+	background-color: #ffffff;
+}
+
+/* Introduction Text Styling */
+.intro-text {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.intro-text h2 {
+	font-size: 30px;
+	color: #333;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.intro-text p {
+	font-size: 16px;
+	color: #555;
+	line-height: 1.6;
+	max-width: 800px;
+	margin: 0 auto;
+	font-weight: bold;
+}
+
+/* Products Container */
+.products-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+}
+
+/* Card Styling */
+.product-card {
+	background: #fff;
+	border-radius: 10px;
+	width: 320px;
+	padding: 20px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	transition: transform 0.3s, box-shadow 0.3s;
+	margin-bottom: 20px;
+}
+
+.product-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Title Styling */
+.product-title {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+/* Description Styling */
+.product-description {
+	font-size: 15px;
+	color: #666;
+	line-height: 1.6;
+	margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+	.product-card {
+		width: 45%; /* Two cards per row for tablets */
+	}
+}
+
+@media (max-width: 768px) {
+	.product-card {
+		width: 100%; /* One card per row for mobile devices */
+	}
+}
+
+@media (max-width: 480px) {
+	.product-title {
+		font-size: 18px; /* Slightly smaller title for very small screens */
+	}
+
+	.product-description {
+		font-size: 14px; /* Smaller description text */
+	}
+}

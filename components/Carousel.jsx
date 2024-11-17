@@ -52,8 +52,8 @@ function Carousel() {
 					<div className='content'>
 						<p className='category'>Engineering Component</p>
 						<h2>
-							MECHANICAL
-							<br /> SUPPLIES
+							VALVES &
+							<br /> PUMP
 						</h2>
 						<p className='description'>
 							The engineering goods industry produces machinery, tools, and
@@ -72,7 +72,7 @@ function Carousel() {
 						<p className='category'>Alloys</p>
 						<h2>
 							FERRO
-							<br /> ALLOYS
+							<br /> SILICON
 						</h2>
 						<p className='description'>
 							The ferro alloys industry produces alloys of iron combined with
