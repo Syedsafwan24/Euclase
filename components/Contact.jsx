@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './css/contact.css';
-import Header from '../../components/Header';
+import './contact.css';
+// import Header from '../../components/Header';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -69,7 +69,7 @@ const Contact = () => {
 
 	return (
 		<>
-			<Header />
+			{/* <Header /> */}
 			<div className='contact-container'>
 				<div className='contact-left'>
 					<h1 className='contact-title'>Contact Us</h1>
