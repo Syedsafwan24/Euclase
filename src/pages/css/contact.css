@@ -1,168 +1,170 @@
 .contact-container {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center; /* Center vertically */
-	min-height: 100vh; /* Use min-height for better flexibility */
-	padding: 2rem;
-	background-color: #ffffff; /* Softer background color for better readability */
-	color: #333;
-	box-sizing: border-box; /* Ensure padding doesn't break layout */
+	justify-content: space-between;
+	gap: 4rem;
+	padding: 8rem 6rem 2rem; /* Increased top padding to account for navbar */
+	max-width: 1200px;
+	margin: 0 auto;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+.contact-left {
+	flex: 1;
+	max-width: 400px;
+	position: relative; /* Added for better positioning */
+}
+
+.contact-right {
+	flex: 1.5;
 }
 
 .contact-title {
 	font-size: 2.5rem;
-	margin-bottom: 0.5rem;
-	color: #000000;
-	text-align: center;
+	font-weight: 700;
+	color: #1a1a1a;
+	margin-bottom: 1rem;
+	line-height: 1.2;
 }
 
 .contact-description {
+	color: #666;
+	line-height: 1.6;
+	margin-bottom: 2rem;
+}
+
+.contact-info {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.contact-info-item {
+	display: flex;
+	align-items: flex-start; /* Changed to flex-start for better alignment */
+	gap: 1rem;
+	color: #666;
+}
+
+.contact-info-item span {
 	font-size: 1.2rem;
-	margin-bottom: 1.5rem;
-	text-align: center;
-	color: #555;
+	min-width: 24px; /* Added for consistent icon spacing */
+}
+
+.contact-info-item p {
+	margin: 0;
+	line-height: 1.4;
 }
 
 .contact-form {
-	width: 100%;
-	max-width: 600px;
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
-	background-color: #fff;
-	padding: 1.5rem;
-	border: 1px solid #ddd;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	gap: 1.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.form-label {
+	color: #1a1a1a;
+	font-weight: 500;
+	font-size: 0.95rem;
+}
+
+.form-label::after {
+	content: ' *';
+	color: #dc3545;
+}
+
+.form-input,
+.form-textarea {
 	width: 100%;
 	padding: 0.8rem;
-	font-size: 1rem;
-	border: 1px solid #ccc;
+	border: 1px solid #e0e0e0;
 	border-radius: 4px;
-	box-sizing: border-box; /* Ensure consistent padding handling */
-	background-color: #fdfdfd;
+	font-size: 1rem;
+	background-color: #fff;
+	box-sizing: border-box;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-	border-color: #2a71d0;
+.form-textarea {
+	min-height: 150px;
+	resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
 	outline: none;
-	box-shadow: 0 0 5px rgba(42, 113, 208, 0.3);
+	border-color: #2a71d0;
 }
 
-.contact-textarea {
-	resize: vertical; /* Allow resizing only vertically */
-	min-height: 100px; /* Ensure a minimum height */
-}
-
-.contact-button {
+.submit-button {
+	align-self: flex-start;
 	background-color: #000000;
 	color: white;
-	font-size: 1.1rem;
-	padding: 0.8rem;
 	border: none;
 	border-radius: 4px;
+	padding: 0.8rem 2rem;
+	font-size: 1rem;
 	cursor: pointer;
-	transition: background-color 0.3s ease, transform 0.2s ease;
-	text-align: center;
+	transition: background-color 0.3s ease;
 }
 
-.contact-button:hover {
-	background-color: #1d4f9d;
-	transform: translateY(-2px); /* Slight hover lift effect */
+.submit-button:hover {
+	background-color: #007bff;
 }
 
-.contact-button:focus {
-	outline: none;
-	box-shadow: 0 0 5px rgba(42, 113, 208, 0.5);
+/* Success and Error messages */
+.success-message,
+.error-message {
+	padding: 1rem;
+	border-radius: 4px;
+	margin-bottom: 1rem;
 }
 
-.contact-footer {
-	margin-top: 2rem;
-	font-size: 0.9rem;
-	color: #666;
-	text-align: center;
-}
-
-/* Success and Error Message */
 .success-message {
-	color: #28a745;
-	font-size: 1.2rem;
-	text-align: center;
-	margin-top: 1rem;
+	background-color: #d4edda;
+	color: #155724;
+	border: 1px solid #c3e6cb;
 }
 
 .error-message {
-	color: #dc3545;
-	font-size: 1.2rem;
-	text-align: center;
-	margin-top: 1rem;
+	background-color: #f8d7da;
+	color: #721c24;
+	border: 1px solid #f5c6cb;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 992px) {
 	.contact-container {
-		padding: 1rem;
-		min-height: auto; /* Adjust for smaller screens */
+		padding: 7rem 2rem 2rem;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.contact-left {
+		max-width: 100%;
+	}
+
+	.contact-info {
+		margin-bottom: 2rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.contact-container {
+		padding: 6rem 1rem 1rem;
 	}
 
 	.contact-title {
 		font-size: 2rem;
 	}
 
-	.contact-description {
-		font-size: 1rem;
-		margin-bottom: 1rem;
-	}
-
-	.contact-form {
-		gap: 0.8rem;
-		padding: 1rem;
-	}
-
-	.contact-form input,
-	.contact-form textarea {
-		padding: 0.6rem;
-		font-size: 0.9rem;
-	}
-
-	.contact-button {
-		font-size: 1rem;
-		padding: 0.6rem;
-	}
-}
-
-@media (max-width: 480px) {
-	.contact-title {
-		font-size: 1.8rem;
-	}
-
-	.contact-description {
-		font-size: 0.9rem;
-	}
-
-	.contact-form {
-		gap: 0.6rem;
-		padding: 0.8rem;
-	}
-
-	.contact-form input,
-	.contact-form textarea {
-		padding: 0.5rem;
-		font-size: 0.8rem;
-	}
-
-	.contact-button {
-		font-size: 0.9rem;
-		padding: 0.5rem;
-	}
-
-	.contact-footer {
-		font-size: 0.8rem;
+	.submit-button {
+		width: 100%;
+		text-align: center;
 	}
 }

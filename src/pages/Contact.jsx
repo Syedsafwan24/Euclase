@@ -5,14 +5,15 @@ import emailjs from '@emailjs/browser';
 
 const Contact = () => {
 	const [formData, setFormData] = useState({
-		name: '',
-		email: '',
+		from_name: '',
+		user_email: '', // Changed from from_email to user_email
+		subject: '',
 		message: '',
 	});
 	const [isSent, setIsSent] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
+	const [isSending, setIsSending] = useState(false);
 
-	// Handle form input changes
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormData((prevData) => ({
@@ -21,40 +22,47 @@ const Contact = () => {
 		}));
 	};
 
-	// Handle form submission
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		setIsSending(true);
 
-		// Replace with your EmailJS service and template details
 		const serviceID = 'service_lbs66wd';
 		const templateID = 'template_bdtxh17';
 		const publicKey = 'eESU8_c7bEh5fhZSb';
 
-		// Prepare the template parameters
 		const templateParams = {
-			name: formData.name,
-			email: formData.email,
+			from_name: formData.from_name,
+			user_email: formData.user_email, // Changed to user_email
+			subject: formData.subject,
 			message: formData.message,
+			to_email:
+				'syedsafwanpirzade@gmail.com, syedsafwan70@gmail.com, azaanpeshmam45@gmail.com',
+			reply_to: formData.user_email, // Changed to user_email
 		};
 
-		// Send the email using EmailJS
 		emailjs
 			.send(serviceID, templateID, templateParams, publicKey)
 			.then(() => {
-				setIsSent(true); // Update success state
+				setIsSent(true);
 				setErrorMessage('');
-				setFormData({ name: '', email: '', message: '' }); // Reset form fields
+				setFormData({
+					from_name: '',
+					user_email: '',
+					subject: '',
+					message: '',
+				});
+				setIsSending(false);
 			})
 			.catch((error) => {
 				setErrorMessage('Failed to send the message, please try again.');
 				console.error('EmailJS Error:', error);
+				setIsSending(false);
 			});
 	};
 
-	// Reset success message after a delay
 	useEffect(() => {
 		if (isSent) {
-			const timer = setTimeout(() => setIsSent(false), 5000); // Clear success state after 5 seconds
+			const timer = setTimeout(() => setIsSent(false), 5000);
 			return () => clearTimeout(timer);
 		}
 	}, [isSent]);
@@ -63,56 +71,104 @@ const Contact = () => {
 		<>
 			<Header />
 			<div className='contact-container'>
-				<h1 className='contact-title'>Get in Touch</h1>
-
-				{/* Display success or error messages */}
-				{isSent && (
-					<p className='success-message'>
-						Your message has been sent successfully!
+				<div className='contact-left'>
+					<h1 className='contact-title'>Contact Us</h1>
+					<p className='contact-description'>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+						tellus, luctus nec ullamcorper mattis, pulvinar.
 					</p>
-				)}
-				{errorMessage && <p className='error-message'>{errorMessage}</p>}
+					<div className='contact-info'>
+						<div className='contact-info-item'>
+							<span>📍</span>
+							<p>12 Avenue, New York, NY 10160</p>
+						</div>
+						<div className='contact-info-item'>
+							<span>✉️</span>
+							<p>contact@business.com</p>
+						</div>
+						<div className='contact-info-item'>
+							<span>📞</span>
+							<p>+1 910-626-85255</p>
+						</div>
+					</div>
+				</div>
 
-				{/* Contact form */}
-				<form className='contact-form' onSubmit={handleSubmit}>
-					<input
-						type='text'
-						name='name'
-						placeholder='Your Name'
-						aria-label='Enter your name'
-						value={formData.name}
-						onChange={handleChange}
-						required
-					/>
-					<input
-						type='email'
-						name='email'
-						placeholder='Your Email'
-						aria-label='Enter your email'
-						value={formData.email}
-						onChange={handleChange}
-						required
-					/>
-					<textarea
-						name='message'
-						placeholder='Your Message'
-						aria-label='Enter your message'
-						value={formData.message}
-						onChange={handleChange}
-						rows='6'
-						required
-					/>
-					<button type='submit' className='contact-button'>
-						Send Message
-					</button>
-				</form>
+				<div className='contact-right'>
+					{isSent && (
+						<p className='success-message'>
+							Your message has been sent successfully!
+						</p>
+					)}
+					{errorMessage && <p className='error-message'>{errorMessage}</p>}
 
-				{/* Footer */}
-				<div className='contact-footer'>
-					<p>
-						&copy; 2024 Euclase. Designed with care in Bhatkal. All rights
-						reserved.
-					</p>
+					<form className='contact-form' onSubmit={handleSubmit}>
+						<div className='form-group'>
+							<label htmlFor='from_name' className='form-label'>
+								Your Name
+							</label>
+							<input
+								id='from_name'
+								type='text'
+								name='from_name'
+								className='form-input'
+								value={formData.from_name}
+								onChange={handleChange}
+								required
+							/>
+						</div>
+
+						<div className='form-group'>
+							<label htmlFor='user_email' className='form-label'>
+								Email
+							</label>
+							<input
+								id='user_email'
+								type='email'
+								name='user_email'
+								className='form-input'
+								value={formData.user_email}
+								onChange={handleChange}
+								required
+							/>
+						</div>
+
+						<div className='form-group'>
+							<label htmlFor='subject' className='form-label'>
+								Subject
+							</label>
+							<input
+								id='subject'
+								type='text'
+								name='subject'
+								className='form-input'
+								value={formData.subject}
+								onChange={handleChange}
+								required
+							/>
+						</div>
+
+						<div className='form-group'>
+							<label htmlFor='message' className='form-label'>
+								Your Message
+							</label>
+							<textarea
+								id='message'
+								name='message'
+								className='form-textarea'
+								value={formData.message}
+								onChange={handleChange}
+								required
+							/>
+						</div>
+
+						<button
+							type='submit'
+							className='submit-button'
+							disabled={isSending}
+						>
+							{isSending ? 'Sending...' : 'Send Message'}
+						</button>
+					</form>
 				</div>
 			</div>
 		</>
