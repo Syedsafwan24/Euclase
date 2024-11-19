@@ -1,4 +1,5 @@
 import Carousel from '../../components/Carousel';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import About from '../../section/About';
 import Industries from '../../section/Industries';
@@ -12,6 +13,7 @@ function Home() {
 			<About />
 			<Product />
 			<Industries />
+			<Footer />
 		</div>
 	);
 }

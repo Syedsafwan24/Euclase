@@ -1,8 +1,9 @@
 .contact-container {
 	display: flex;
+	flex-direction: row; /* Default layout */
 	justify-content: space-between;
 	gap: 4rem;
-	padding: 8rem 6rem 2rem; /* Increased top padding to account for navbar */
+	padding: 8rem 6rem 2rem; /* Top padding for navbar */
 	max-width: 1200px;
 	margin: 0 auto;
 	min-height: 100vh;
@@ -12,7 +13,8 @@
 .contact-left {
 	flex: 1;
 	max-width: 400px;
-	position: relative; /* Added for better positioning */
+	position: relative;
+	top: 100px;
 }
 
 .contact-right {
@@ -25,12 +27,14 @@
 	color: #1a1a1a;
 	margin-bottom: 1rem;
 	line-height: 1.2;
+	text-align: left;
 }
 
 .contact-description {
 	color: #666;
 	line-height: 1.6;
 	margin-bottom: 2rem;
+	text-align: justify; /* Improves readability */
 }
 
 .contact-info {
@@ -41,14 +45,14 @@
 
 .contact-info-item {
 	display: flex;
-	align-items: flex-start; /* Changed to flex-start for better alignment */
+	align-items: center;
 	gap: 1rem;
 	color: #666;
 }
 
 .contact-info-item span {
 	font-size: 1.2rem;
-	min-width: 24px; /* Added for consistent icon spacing */
+	min-width: 24px;
 }
 
 .contact-info-item p {
@@ -60,6 +64,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
+	width: 100%; /* Ensures full width */
 }
 
 .form-group {
@@ -141,12 +146,18 @@
 @media (max-width: 992px) {
 	.contact-container {
 		padding: 7rem 2rem 2rem;
-		flex-direction: column;
+		flex-direction: column; /* Stack the layout */
 		gap: 2rem;
 	}
 
 	.contact-left {
 		max-width: 100%;
+		top: 0; /* Adjust top positioning for smaller screens */
+		text-align: center;
+	}
+
+	.contact-right {
+		text-align: center;
 	}
 
 	.contact-info {
@@ -161,10 +172,19 @@
 
 	.contact-title {
 		font-size: 2rem;
+		text-align: center; /* Center title on small screens */
+	}
+
+	.contact-description {
+		text-align: center; /* Center description for better UX */
+	}
+
+	.contact-form {
+		width: 100%;
 	}
 
 	.submit-button {
-		width: 100%;
+		width: 100%; /* Full-width button for smaller screens */
 		text-align: center;
 	}
 }

@@ -1,36 +1,65 @@
 // Header.js
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import only Link for navigation
-// import '../src/style.css';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
-// import logo from '../img/logo1.png'; // Adjusted import
 import logo from '../src/img/logo1.png';
 
 function Header() {
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const toggleMenu = () => {
+		setIsMenuOpen(!isMenuOpen);
+	};
+
+	const closeMenu = () => {
+		setIsMenuOpen(false);
+	};
+
 	return (
-		<header>
-			<figure className='logo'>
-				<Link to='/'>
-					<img src={logo} alt='Logo' />
-				</Link>
-			</figure>
-			<nav>
-				<ul>
-					<li>
-						<Link to='/'>HOME</Link>
-					</li>
-					<li>
-						<Link to='/product'>PRODUCT</Link>
-					</li>
-					<li>
-						<Link to='/about'>ABOUT</Link>
-					</li>
-					<li>
-						<Link to='/contact'>CONTACT</Link>
-					</li>
-				</ul>
-			</nav>
-		</header>
+		<>
+			<header className={isMenuOpen ? 'menu-open' : ''}>
+				<figure className='logo'>
+					<Link to='/' onClick={closeMenu}>
+						<img src={logo} alt='Logo' />
+					</Link>
+				</figure>
+
+				<button
+					className='menu-toggle'
+					onClick={toggleMenu}
+					aria-expanded={isMenuOpen}
+					aria-label='Toggle navigation menu'
+				>
+					<span className='hamburger'></span>
+				</button>
+
+				<nav className={isMenuOpen ? 'active' : ''}>
+					<ul>
+						<li>
+							<Link to='/' onClick={closeMenu}>
+								HOME
+							</Link>
+						</li>
+						<li>
+							<Link to='/product' onClick={closeMenu}>
+								PRODUCT
+							</Link>
+						</li>
+						<li>
+							<Link to='/about' onClick={closeMenu}>
+								ABOUT
+							</Link>
+						</li>
+						<li>
+							<Link to='/contact' onClick={closeMenu}>
+								CONTACT
+							</Link>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			{isMenuOpen && <div className='overlay' onClick={closeMenu}></div>}
+		</>
 	);
 }
 

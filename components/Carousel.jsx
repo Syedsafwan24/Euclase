@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import '../src/style.css';
+// import '../src/style.css';
 
 // import img1 from '../img/9.png';
 // import img2 from '../img/7A.png';
 // import img3 from '../img/4.png';
+// import './Carousel.css';
 import img1 from '../src/img/9.png';
 import img2 from '../src/img/7A.png';
 import img3 from '../src/img/4.png';

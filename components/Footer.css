@@ -1,0 +1,88 @@
+.footer-container {
+	background-color: #000000; /* Dark theme background */
+	color: #fff; /* White text */
+	padding: 40px 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.footer-column {
+	flex: 1 1 200px;
+	margin: 10px;
+	min-width: 200px; /* Ensures columns don't shrink too much */
+}
+
+.footer-column h4 {
+	font-size: 18px;
+	margin-bottom: 15px;
+	color: #f0f8ff;
+}
+
+.footer-column ul {
+	list-style: none;
+	padding: 0;
+}
+
+.footer-column ul li {
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #d1e1ff;
+}
+
+.footer-column ul li:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.footer-bottom {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 14px;
+	color: #b0c4de;
+}
+
+.footer-bottom p {
+	margin: 5px 0;
+}
+.footer-column ul li a {
+	color: #d1e1ff;
+	text-decoration: none; /* Highlight links */
+}
+
+.footer-column ul li a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* RESPONSIVE STYLING */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+	.footer-container {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.footer-column {
+		flex: 1 1 100%; /* Full-width columns */
+		margin: 20px 0; /* Add spacing between sections */
+	}
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+	.footer-column h4 {
+		font-size: 16px;
+	}
+
+	.footer-column ul li {
+		font-size: 13px;
+	}
+
+	.footer-bottom {
+		font-size: 12px;
+	}
+}
