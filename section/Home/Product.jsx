@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './Product.css';
-import Button from '../components/Button';
+import Button from '../../components/Button';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

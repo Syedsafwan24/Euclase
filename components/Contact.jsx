@@ -35,8 +35,7 @@ const Contact = () => {
 			user_email: formData.user_email, // Changed to user_email
 			subject: formData.subject,
 			message: formData.message,
-			to_email:
-				'syedsafwanpirzade@gmail.com, syedsafwan70@gmail.com, azaanpeshmam45@gmail.com',
+			to_email: 'syedsafwanpirzade@gmail.com,mohiddinelaaf28@gmail.com',
 			reply_to: formData.user_email, // Changed to user_email
 		};
 

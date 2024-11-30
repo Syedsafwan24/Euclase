@@ -1,16 +1,16 @@
 import Carousel from '../../components/Carousel';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
-import About from '../../section/About';
-import Industries from '../../section/Industries';
-import Product from '../../section/Product';
+// import About from '../../section/Home/About';
+import Industries from '../../section/Home/Industries';
+import Product from '../../section/Home/Product';
 
 function Home() {
 	return (
 		<div>
 			<Header />
 			<Carousel />
-			<About />
+			{/* <About /> */}
 			<Product />
 			<Industries />
 			<Footer />
