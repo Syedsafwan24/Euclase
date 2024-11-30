@@ -6,7 +6,7 @@ function About() {
 	return (
 		<div className='about-container'>
 			<div className='about-header'>
-				<h4>About Us</h4>
+				<h1>About Us</h1>
 				<h1>
 					25 Long Years of Manufacturing <br /> Excellence With Quality at Its
 					Best!

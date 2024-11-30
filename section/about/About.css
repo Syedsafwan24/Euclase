@@ -1,83 +1,85 @@
 .about-container {
-	padding: 20px;
+	background-color: #ffffff; /* Soft gray background */
+	padding: 60px;
+	border-radius: 8px;
+	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 	max-width: 1200px;
-	margin: 0 auto;
-	position: relative;
-	top: 60px;
+	margin: 40px auto;
 }
 
 .about-header {
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
-.about-header h4 {
-	font-size: 1rem; /* Reduced font size */
-	color: #666;
-	margin-bottom: 5px;
+.about-header h1:first-child {
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: #555;
 }
 
-.about-header h1 {
-	font-size: 1.8rem;
-	font-weight: bold;
-	margin-top: 5px;
-	margin-bottom: 20px;
+.about-header h1:last-child {
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #222;
+	margin-top: 10px;
+	line-height: 1.4;
 }
 
 .about-content-wrapper {
 	display: flex;
-	align-items: center; /* Center-align items vertically */
-	gap: 30px;
-	flex-direction: row; /* Default: logo on the left */
-}
-
-.about-logo {
-	flex-shrink: 0; /* Prevent logo from shrinking */
+	align-items: center;
+	gap: 50px;
 }
 
 .about-logo img {
-	width: 150px;
-	height: auto;
-	margin-left: 20px;
+	width: 200px;
+	border-radius: 50%;
+	/* box-shadow: 0 4px 8px rgb(255, 255, 255); */
 }
 
 .about-content {
 	flex: 1;
-	text-align: justify;
+	font-size: 1.1rem;
+	line-height: 1.8;
+	color: #333;
+	background: #fff;
+	padding: 20px 30px;
+	border-radius: 8px;
+	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); */
 }
 
-/* Responsive Styles */
+.about-content p {
+	margin-bottom: 20px;
+}
+
+.about-content p:last-child {
+	margin-bottom: 0;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
 	.about-content-wrapper {
 		flex-direction: column;
-		align-items: center;
+		text-align: center;
 	}
 
 	.about-logo img {
-		width: 120px;
+		width: 150px;
 		margin-bottom: 20px;
 	}
 
-	.about-header h1 {
-		font-size: 1.5rem;
-	}
-
-	.about-header h4 {
-		font-size: 0.9rem;
+	.about-content {
+		padding: 15px;
 	}
 }
 
 @media (max-width: 480px) {
-	.about-header h1 {
-		font-size: 1.3rem;
-	}
-
-	.about-header h4 {
-		font-size: 0.8rem;
+	.about-header h1:last-child {
+		font-size: 1.8rem;
 	}
 
 	.about-content p {
-		font-size: 0.9rem;
-		line-height: 1.4;
+		font-size: 0.95rem;
 	}
 }
