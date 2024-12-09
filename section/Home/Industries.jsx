@@ -7,6 +7,7 @@ import 'aos/dist/aos.css'; // Import AOS styles
 import oilImage from './img-indust/oil-1.jpg';
 import alloyImage from './img-indust/alloy.jpg';
 import automotiveImage from './img-indust/automotive.jpg';
+import Button from '../../components/Button';
 
 function Industries() {
 	// Initialize AOS
@@ -67,6 +68,9 @@ function Industries() {
 						doloremque quibusdam deserunt?
 					</p>
 				</div>
+			</div>
+			<div className='learn-more' data-aos='fade-up'>
+				<Button text='Learn More' href='/product' />
 			</div>
 		</div>
 	);

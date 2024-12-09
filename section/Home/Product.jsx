@@ -7,17 +7,17 @@ import 'aos/dist/aos.css';
 const Product = () => {
 	const products = [
 		{
-			title: 'SPECIALIZED CHEMICALS',
+			title: 'RAPID RESPONSE',
 			description:
 				'Specialized chemicals are high-value chemicals crafted for specific applications across industries such as pharmaceuticals, agriculture, electronics, and cosmetics. Unlike bulk chemicals, these are produced in smaller quantities with unique formulations for precise functions. Examples include surfactants for cleaning, adhesives for construction, biocides for crop protection, and specialty polymers for electronics.',
 		},
 		{
-			title: 'FERRO ALLOYS',
+			title: 'TAILORED SOLUTIONS',
 			description:
 				'Ferro alloys are iron-based alloys that add elements like chromium, manganese, and silicon to enhance steel’s properties such as strength, toughness, and corrosion resistance. Essential in steelmaking, they are widely used in construction, automotive, and manufacturing for high-strength materials.',
 		},
 		{
-			title: 'MECHANICAL SUPPLIES',
+			title: 'QUALITY UNSURPASSED',
 			description:
 				'Mechanical supplies include pipes, valves, pumps, compressors, heat exchangers, bearings, and fasteners. These components are crucial for transporting fluids, controlling flow, managing temperature, and ensuring equipment integrity, supporting safe and efficient operations.',
 		},
@@ -45,9 +45,6 @@ const Product = () => {
 						<p className='product-description'>{product.description}</p>
 					</div>
 				))}
-			</div>
-			<div className='learn-more' data-aos='fade-up'>
-				<Button text='Learn More' href='/product' />
 			</div>
 		</div>
 	);
