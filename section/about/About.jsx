@@ -7,7 +7,7 @@ function About() {
 	return (
 		<>
 			<div className='about-header'>
-				<div className='about-header-text'>ABOUT</div>
+				<div className='about-header-text'>ABOUT US</div>
 			</div>
 			<div className='about-container'>
 				<div className='about-content-wrapper'>

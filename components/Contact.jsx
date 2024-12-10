@@ -69,6 +69,9 @@ const Contact = () => {
 	return (
 		<>
 			{/* <Header /> */}
+			<div className='contact-header'>
+				<div className='contact-header-text'>CONTACT US</div>
+			</div>
 			<div className='contact-container'>
 				<div className='contact-left'>
 					<h1 className='contact-title'>Contact Us</h1>
