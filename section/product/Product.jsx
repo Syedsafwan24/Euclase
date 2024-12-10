@@ -1,6 +1,7 @@
 import React from 'react';
 import './Product.css';
 import ProductDetails from './ProductDetails';
+import Innovations from './Innovations';
 
 function Product() {
 	return (
@@ -10,6 +11,7 @@ function Product() {
 				<div className='product-header-text'>PRODUCTS</div>
 			</div>
 			<ProductDetails />
+			<Innovations />
 		</div>
 	);
 }

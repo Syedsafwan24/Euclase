@@ -6,6 +6,9 @@ import Footer from '../../components/Footer';
 function About() {
 	return (
 		<>
+			<div className='about-header'>
+				<div className='about-header-text'>ABOUT</div>
+			</div>
 			<div className='about-container'>
 				<div className='about-content-wrapper'>
 					{/* Left Side - Logo */}
