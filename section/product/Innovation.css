@@ -1,7 +1,9 @@
 .innovations-container {
-	padding: 40px 100px;
+	padding: 40px 10px; /* Same padding as .product-details */
+	margin: 0 auto; /* Center the container */
+	max-width: 1200px; /* Added max-width for consistency */
 	text-align: center;
-	font-family: 'poppins', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	background-color: #ffffff;
 	color: #333;
 }
@@ -11,20 +13,20 @@
 	font-weight: 600;
 	text-transform: uppercase;
 	color: #7c7c7c;
-	margin-bottom: 0.5rem;
+	margin-bottom: 1.2rem; /* Same margin-bottom as .product-details-text h5 */
 }
 
 .innovations-container h2 {
 	font-size: 30px;
 	font-weight: 700;
 	color: #212529;
-	margin-bottom: 3rem;
+	margin-bottom: 1.8rem; /* Same margin-bottom as .product-details-text h2 */
 }
 
 .product-grid {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr); /* Exactly 2 columns per row */
-	gap: 2.5rem; /* Space between items */
+	grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+	gap: 2rem; /* Same gap as product-details-images */
 }
 
 .product-item {
@@ -42,18 +44,41 @@
 
 .product-item p {
 	font-size: 15px;
-	line-height: 1.6;
+	line-height: 1.75; /* Same line-height as .product-details-text p */
 	color: #666666;
 }
 
 /* Responsive Adjustment */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 	.innovations-container {
-		padding: 2rem 1rem;
+		padding: 30px 50px; /* Same adjustment as .product-details */
 	}
 
 	.product-grid {
-		grid-template-columns: 1fr; /* Single column on smaller screens */
-		gap: 2rem;
+		gap: 1.5rem; /* Adjusted for medium screens */
+	}
+}
+
+@media (max-width: 1024px) {
+	.innovations-container {
+		padding: 20px 30px; /* Same adjustment as .product-details */
+	}
+
+	.product-grid {
+		grid-template-columns: 1fr; /* Single column layout for smaller screens */
+	}
+}
+
+@media (max-width: 768px) {
+	.innovations-container {
+		padding: 15px 20px; /* Further reduced padding */
+	}
+
+	.product-item h3 {
+		font-size: 18px; /* Slightly smaller font for headings */
+	}
+
+	.product-item p {
+		font-size: 14px;
 	}
 }
